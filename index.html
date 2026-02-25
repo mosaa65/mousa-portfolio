@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="السيرة الذاتية الرقمية للمهندس موسى جميل العواضي - تطوير أنظمة ومواقع وتطبيقات مع خبرة عملية في الذكاء الاصطناعي." />
+  <meta name="description" lang="en" content="Digital CV of Mousa Jamil Al-Awadhi, Software Engineer building web and mobile systems with practical AI integration." />
+  <meta name="keywords" content="موسى العواضي, مهندس برمجيات, Flutter, Laravel, ERP, AI, Software Engineer, Full Stack" />
+  <title>موسى العواضي | سيرة ذاتية احترافية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <header class="topbar">
+    <div class="brand">CV Portfolio</div>
+    <div class="top-actions">
+      <button id="langToggle" class="btn btn-outline" type="button">EN</button>
+      <button id="contactBtn" class="btn btn-solid" type="button">تواصل مباشر</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero card reveal">
+      <div class="hero-content">
+        <p class="eyebrow" data-i18n="eyebrow">مهندس برمجيات</p>
+        <h1 id="name">...</h1>
+        <p id="headline" class="headline"></p>
+        <p id="summary" class="summary"></p>
+        <div class="hero-meta" id="heroMeta"></div>
+        <div class="hero-cta">
+          <a class="btn btn-solid" href="../cv.pdf" target="_blank" rel="noopener" data-i18n="downloadPdf">تحميل السيرة بصيغة PDF</a>
+          <a class="btn btn-outline" href="../cv.docx" data-i18n="downloadDocx">تحميل السيرة بصيغة Word</a>
+          <a class="btn btn-ghost" href="#projects" data-i18n="viewProjects">عرض المشاريع</a>
+          <button class="btn btn-ghost" id="printBtn" type="button" data-i18n="printCv">نسخة للطباعة</button>
+        </div>
+      </div>
+      <div class="hero-image-wrap">
+        <img src="./assets/profile.jpg" alt="Profile" class="hero-image" />
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2 data-i18n="achievements">الإنجازات بالأرقام</h2>
+      <div id="achievements" class="stats-grid"></div>
+    </section>
+
+    <section class="section reveal" id="skills">
+      <h2 data-i18n="skills">المهارات التقنية</h2>
+      <div id="skillsWrap" class="skills-wrap"></div>
+    </section>
+
+    <section class="section reveal" id="projects">
+      <h2 data-i18n="projects">المشاريع</h2>
+      <p class="section-note" data-i18n="projectsNote">جميع المشاريع مذكورة من المصادر، وروابط المستودعات غير الموثقة موسومة بوضوح.</p>
+      <div id="projectsGrid" class="projects-grid"></div>
+    </section>
+
+    <section class="section reveal" id="advanced">
+      <h2 data-i18n="advanced">التقنيات المتقدمة</h2>
+      <ul id="advancedList" class="list-grid"></ul>
+    </section>
+
+    <section class="section reveal" id="ai">
+      <h2 data-i18n="ai">الذكاء الاصطناعي وتطبيقاته</h2>
+      <p id="aiOverview"></p>
+      <ul id="aiList" class="ai-list"></ul>
+    </section>
+
+    <section class="section reveal" id="roles">
+      <h2 data-i18n="roles">الفرص المستهدفة</h2>
+      <ol id="rolesList" class="roles-list"></ol>
+    </section>
+
+    <section class="section reveal" id="sourceDump">
+      <h2 data-i18n="sources">المصادر الكاملة (Raw)</h2>
+      <p class="section-note" data-i18n="sourcesNote">تم تضمين النصوص الخام من الملفات كما هي لضمان عدم فقد أي معلومة.</p>
+      <div id="rawSources" class="raw-sources"></div>
+    </section>
+  </main>
+
+  <div id="contactModal" class="modal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 data-i18n="contactTitle">التواصل والروابط</h3>
+        <button id="closeModal" class="close-btn" type="button" aria-label="close">×</button>
+      </div>
+      <div id="contactContent" class="contact-content"></div>
+    </div>
+  </div>
+
+  <script src="./data.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
