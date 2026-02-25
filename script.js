@@ -54,6 +54,48 @@
   let lang = 'ar';
   const $ = (sel) => document.querySelector(sel);
 
+  const techIcons = {
+    'PHP': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg',
+    'JavaScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg',
+    'JS': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg',
+    'Python': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-plain.svg',
+    'Py': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-plain.svg',
+    'Dart': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-plain.svg',
+    'Java': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-plain.svg',
+    'Kotlin': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-plain.svg',
+    'C++': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-plain.svg',
+    'C#': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-plain.svg',
+    'HTML': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg',
+    'CSS': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg',
+    'TypeScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-plain.svg',
+    'SQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-plain.svg',
+    'Laravel': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg',
+    'Flutter': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-plain.svg',
+    'NestJS': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg',
+    'Next.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+    'React': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+    'Tailwind CSS': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg',
+    'Tailwind': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg',
+    'MySQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-plain.svg',
+    'SQL Server': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg',
+    'SQLite': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-plain.svg',
+    'Firebase': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+    'Git': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain.svg',
+    'GitHub': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
+    'Docker': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain.svg',
+    'Vite': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg',
+    'Prisma ORM': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg',
+    'Prisma': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg',
+    'Google': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg',
+    'Microsoft': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg',
+    'Windows': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg'
+  };
+
+  function getIconTag(name) {
+    const icon = techIcons[name] || techIcons[name.split(' ')[0]];
+    return icon ? `<img src="${icon}" alt="${name}" loading="lazy" />` : '';
+  }
+
   function renderMeta() {
     const p = data.personal;
     const meta = $('#heroMeta');
@@ -92,7 +134,7 @@
     Object.entries(data.skills).forEach(([k, values]) => {
       const sec = document.createElement('section');
       sec.className = 'skill-group';
-      sec.innerHTML = `<h3>${labels[k] || k}</h3><div class="tags">${values.map((x) => `<span class="tag">${x}</span>`).join('')}</div>`;
+      sec.innerHTML = `<h3>${labels[k] || k}</h3><div class="tags">${values.map((x) => `<span class="tag">${getIconTag(x)} ${x}</span>`).join('')}</div>`;
       wrap.appendChild(sec);
     });
   }
@@ -108,11 +150,13 @@
         <h3>${pr.name_ar}</h3>
         <div class="meta">${i18n[lang].role}: ${pr.role}</div>
         <div class="meta">${i18n[lang].period}: ${pr.period}</div>
-        <div class="tags">${pr.tech.slice(0, 8).map((t) => `<span class="tag">${t}</span>`).join('')}</div>
+        <div class="tags">${pr.tech.slice(0, 10).map((t) => `<span class="tag">${getIconTag(t)} ${t}</span>`).join('')}</div>
         <div class="meta"><strong>${i18n[lang].highlights}:</strong></div>
         <ul>${pr.highlights.map((h) => `<li>${h}</li>`).join('')}</ul>
-        <span class="${badgeClass}">${pr.repo_status}</span>
-        <a class="btn btn-outline" target="_blank" rel="noopener" href="${pr.github_url}">${i18n[lang].repo}: ${pr.repo_name}</a>
+        <div style="margin-top:auto; display:flex; flex-direction:column; gap:0.5rem;">
+          <span class="${badgeClass}">${pr.repo_status}</span>
+          <a class="btn btn-outline" target="_blank" rel="noopener" href="${pr.github_url}">${i18n[lang].repo}: ${pr.repo_name}</a>
+        </div>
       `;
       grid.appendChild(art);
     });
@@ -160,7 +204,6 @@
     $('#langToggle').textContent = lang === 'ar' ? 'EN' : 'AR';
     $('#contactBtn').textContent = i18n[lang].contactBtn;
     renderProjects();
-    renderRawSources();
   }
 
   function setupEvents() {
@@ -225,7 +268,6 @@
   }
 
   renderMeta();
-  renderAchievements();
   renderSkills();
   renderAdvancedAndAI();
   renderContact();

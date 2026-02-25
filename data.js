@@ -72,18 +72,6 @@ window.CV_DATA = {
       "Prisma ORM",
       "NetBeans"
     ],
-    "tools": [
-      "Git",
-      "GitHub",
-      "Google Play Console",
-      "Google Search Console",
-      "Google AdMob",
-      "Google Colab",
-      "Google APIs",
-      "Swagger/OpenAPI",
-      "Docker",
-      "Microsoft Office"
-    ],
     "databases": [
       "MySQL",
       "SQL Server",
@@ -91,23 +79,29 @@ window.CV_DATA = {
       "Firebase",
       "Prisma Migrations"
     ],
-    "web_and_mobile": [
-      "RESTful APIs",
-      "Front-End Development",
-      "Back-End Development",
-      "Responsive UI/UX",
-      "Authentication & Authorization",
-      "RBAC",
-      "SEO",
-      "Performance Optimization",
-      "Clean URLs"
-    ],
     "hosting_and_ops": [
-      "Hosting & Server Management",
-      "Domains & DNS",
-      "Deployment Operations",
-      "Windows Troubleshooting",
-      "App Publishing and Update Management"
+      "إدارة الاستضافات والسيرفرات (Hosting & Server Management)",
+      "تهيئة النطاقات وإعدادات الـ DNS",
+      "عمليات النشر والتشغيل (Deployment Operations)",
+      "تشخيص وحل أعطال أنظمة Windows المتقدمة"
+    ],
+    "web_and_mobile": [
+      "تصميم وتحسين واجهات وتجربة المستخدم (UI/UX Design)",
+      "دمج حلول وواجهات الذكاء الاصطناعي (AI Integration)",
+      "تطوير الويب المتكامل (Back-End & Front-End)",
+      "تطوير تطبيقات الجوال المتجاوبة (Responsive Mobile Apps)",
+      "تهيئة المواقع لمحركات البحث (SEO)",
+      "إدارة الصلاحيات والوصول (RBAC & Auth Systems)"
+    ],
+    "tools": [
+      "Git & GitHub (Version Control)",
+      "Google Play Console (نشر وإدارة التطبيقات)",
+      "Google AdMob (إدارة الإعلانات وتحقيق الدخل)",
+      "Google Search Console & APIs",
+      "Google Colab & Data Tools",
+      "Microsoft Office Suite (إتقان كامل للاستخدام الإداري)",
+      "Docker & Containerization",
+      "Swagger/OpenAPI (API Documentation)"
     ],
     "analysis_and_modeling": [
       "SDLC",
@@ -474,28 +468,6 @@ window.CV_DATA = {
       "repo_verified": false
     }
   ],
-  "achievements_numbers": [
-    {
-      "metric": "عدد الأنظمة والتطبيقات المطورة",
-      "value": "20+ (تقديري)"
-    },
-    {
-      "metric": "إجمالي تحميلات تطبيقات منشورة",
-      "value": "50,000+ (تقديري)"
-    },
-    {
-      "metric": "تحسين دقة عمليات محاسبية في أنظمة ERP",
-      "value": "40% (تقديري)"
-    },
-    {
-      "metric": "إدارة فريق هندسي ضمن نموذج تسليم موثق",
-      "value": "4 مهندسين"
-    },
-    {
-      "metric": "العمل المكثف خلال فترات التسليم",
-      "value": "حتى 12 ساعة/يوم (تقديري)"
-    }
-  ],
   "advanced_stack": [
     "MVC Architecture",
     "Modular Monolith Design",
@@ -551,12 +523,11 @@ window.CV_DATA = {
     "institution": "غير مذكور"
   },
   "target_roles": [
-    "Full-Stack Software Engineer",
-    "Flutter / Mobile Developer",
-    "AI-Integrated Applications Engineer",
-    "Backend Developer (PHP/Laravel)",
-    "Software Engineer (Web & Mobile)",
-    "Freelance / Remote Projects"
+    "Full-Stack Developer",
+    "Back-End Developer",
+    "Front-End Developer",
+    "Mobile App Developer",
+    "Software Engineer"
   ],
   "missing_fields": {
     "employment_dates": "غير مذكور",
