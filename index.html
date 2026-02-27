@@ -14,16 +14,24 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
   <div class="bg-grid"></div>
+  <div class="bg-orb bg-orb--1"></div>
+  <div class="bg-orb bg-orb--2"></div>
+  <div class="bg-orb bg-orb--3"></div>
+
   <header class="topbar">
-    <div class="brand">CV Portfolio</div>
+    <div class="brand">ENG MOUSA</div>
     <div class="top-actions">
+      <button id="themeToggle" class="btn btn-ghost icon-btn" type="button" aria-label="Toggle Theme">
+        <span class="theme-icon light-icon" style="display:none;">☀️</span>
+        <span class="theme-icon dark-icon">🌙</span>
+      </button>
       <button id="langToggle" class="btn btn-outline" type="button">EN</button>
       <button id="contactBtn" class="btn btn-solid" type="button">تواصل مباشر</button>
     </div>
@@ -50,6 +58,11 @@
       </div>
     </section>
 
+    <section class="section reveal" id="experience">
+      <h2 data-i18n="experience">الخبرة العملية</h2>
+      <ul id="experienceList" class="experience-list"></ul>
+    </section>
+
     <section class="section reveal" id="skills">
       <h2 data-i18n="skills">المهارات التقنية</h2>
       <div id="skillsWrap" class="skills-wrap"></div>
@@ -73,12 +86,31 @@
       <ul id="aiList" class="ai-list"></ul>
     </section>
 
+    <section class="section reveal" id="education">
+      <h2 data-i18n="education">المؤهل العلمي</h2>
+      <div id="educationWrap"></div>
+    </section>
+
+    <section class="section reveal" id="softSkills">
+      <h2 data-i18n="softSkills">المهارات الشخصية</h2>
+      <div id="softSkillsWrap" class="soft-skills-grid"></div>
+    </section>
+
+    <section class="section reveal" id="languagesSection">
+      <h2 data-i18n="languagesTitle">اللغات</h2>
+      <div id="languagesWrap" class="languages-grid"></div>
+    </section>
+
     <section class="section reveal" id="roles">
       <h2 data-i18n="roles">الفرص المستهدفة</h2>
       <ol id="rolesList" class="roles-list"></ol>
     </section>
 
   </main>
+
+  <footer class="site-footer">
+    <p id="footerText">© 2026 موسى العواضي — جميع الحقوق محفوظة</p>
+  </footer>
 
   <div id="contactModal" class="modal" aria-hidden="true">
     <div class="modal-card">
